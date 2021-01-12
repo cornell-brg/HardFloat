@@ -1,5 +1,12 @@
+PyMTL3 Wrappers of BSG Hardfloat
+================================
+
+This branch hosts the PyMTL3 wrappers of BSG Hardfloat modules. We used
+the BSG modules in the HB tapeout for consistency and better design
+quality (e.g., their repos incorporate a few bug fixes and improvements).
 
 Package Overview for Berkeley HardFloat Release 1
+=================================================
 
 John R. Hauser
 2019 July 29
