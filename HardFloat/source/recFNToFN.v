@@ -41,7 +41,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 module
     recFNToFN#(parameter expWidth = 3, parameter sigWidth = 3) (
-        input [(expWidth + sigWidth):0] in,
+        input [(expWidth + sigWidth):0] in_,
         output [(expWidth + sigWidth - 1):0] out
     );
 `include "HardFloat_localFuncs.vi"
@@ -56,7 +56,7 @@ module
     wire signed [(expWidth + 1):0] sExp;
     wire [sigWidth:0] sig;
     recFNToRawFN#(expWidth, sigWidth)
-        recFNToRawFN(in, isNaN, isInf, isZero, sign, sExp, sig);
+        recFNToRawFN(in_, isNaN, isInf, isZero, sign, sExp, sig);
     // FIX provided by John Hauser.
     // if the input is recoded infinity with x in sig and exp fields,
     // isSubnormal also turns x, and fractOut becomes x.

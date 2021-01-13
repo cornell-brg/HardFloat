@@ -33,6 +33,4 @@ class FNToRecFN( VerilogPlaceholder, Component ):
     s.set_metadata( VerilogPlaceholderPass.has_clk, False )
     s.set_metadata( VerilogPlaceholderPass.has_reset, False )
 
-    s.set_metadata( VerilogPlaceholderPass.port_map, {s.in_:'in'} )
-
     s.set_metadata( VerilogVerilatorImportPass.vl_Wno_list, ['WIDTH'] )
