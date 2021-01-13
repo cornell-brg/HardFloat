@@ -1,3 +1,5 @@
+`ifndef __HARDFLOAT_DIVSQRTRECFN_SMALL_V__
+`define __HARDFLOAT_DIVSQRTRECFN_SMALL_V__
 
 /*============================================================================
 
@@ -370,3 +372,4 @@ module
 
 endmodule
 
+`endif /* __HARDFLOAT_DIVSQRTRECFN_SMALL_V__ */

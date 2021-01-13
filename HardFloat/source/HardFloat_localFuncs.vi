@@ -46,4 +46,3 @@ function integer clog2;
     end
 
 endfunction
-

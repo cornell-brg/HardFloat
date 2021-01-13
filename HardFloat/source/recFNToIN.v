@@ -1,3 +1,5 @@
+`ifndef __HARDFLOAT_RECFNTOIN_V__
+`define __HARDFLOAT_RECFNTOIN_V__
 
 /*============================================================================
 
@@ -134,7 +136,8 @@ module
     wire [(intWidth - 1):0] excOut;
     iNFromException#(intWidth) iNFromException(signedOut, isNaN, sign, excOut);
     assign out = invalidExc || common_overflow ? excOut : roundedInt;
-    assign intExceptionFlags = {invalidExc, overflow, inexact};
+j    assign intExceptionFlags = {invalidExc, overflow, inexact};
 
 endmodule
 
+`endif /* __HARDFLOAT_RECFNTOIN_V__ */

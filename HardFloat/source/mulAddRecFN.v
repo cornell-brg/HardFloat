@@ -1,3 +1,5 @@
+`ifndef __HARDFLOAT_MULADDRECFN_V__
+`define __HARDFLOAT_MULADDRECFN_V__
 
 /*============================================================================
 
@@ -503,3 +505,4 @@ module
         );
 endmodule
 
+`endif /* __HARDFLOAT_MULADDRECFN_V__ */

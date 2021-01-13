@@ -15,16 +15,17 @@ class MulAddFN( Component ):
 
   # Constructor
 
-  def construct( s, expWidth = 5, sigWidth = 11 ):
+  def construct( s, expWidth = 5, sigWidth = 11, imulEn=0 ):
 
     # Declaring input and output ports
-    s.op             = InPort ( Bits2 )
+    s.op             = InPort ( Bits3 )
     s.a              = InPort ( mk_bits(expWidth + sigWidth) )
     s.b              = InPort ( mk_bits(expWidth + sigWidth) )
     s.c              = InPort ( mk_bits(expWidth + sigWidth) )
     s.roundingMode   = InPort ( Bits3 )
 
     s.out            = OutPort ( mk_bits(expWidth + sigWidth) )
+    s.out_imul       = OutPort ( mk_bits(expWidth + sigWidth) )
 
     # Declaring wires
     s.conv_a          = Wire( mk_bits(expWidth + sigWidth + 1) )
@@ -60,7 +61,8 @@ class MulAddFN( Component ):
     connect( s.roundingMode, s.adder_multiplier.roundingMode )
 
     connect( s.adder_multiplier.out, s.add_mul_out )
-    connect( s.adder_multiplier.exceptionFlags, s.exception_flags)
+    connect( s.adder_multiplier.exceptionFlags, s.exception_flags )
+    connect( s.adder_multiplier.out_imul, s.out_imul )
 
     connect( s.add_mul_out, s.rec_to_std_conv.in_ )
     connect( s.rec_to_std_conv.out, s.out ) # connecting the output

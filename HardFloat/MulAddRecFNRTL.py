@@ -9,12 +9,12 @@ class MulAddRecFN( VerilogPlaceholder, Component ):
 
   # Constructor
 
-  def construct( s, expWidth=5, sigWidth=11 ):
+  def construct( s, expWidth=5, sigWidth=11, imulEn=0 ):
 
     # Interface
 
     s.control        = InPort ()
-    s.op             = InPort ( 2 )
+    s.op             = InPort ( 3 )
     s.a              = InPort ( expWidth + sigWidth + 1 )
     s.b              = InPort ( expWidth + sigWidth + 1 )
     s.c              = InPort ( expWidth + sigWidth + 1 )
@@ -22,6 +22,7 @@ class MulAddRecFN( VerilogPlaceholder, Component ):
 
     s.out            = OutPort ( expWidth + sigWidth + 1 )
     s.exceptionFlags = OutPort ( 5 )
+    s.out_imul       = OutPort ( expWidth + sigWidth )
 
     # Configurations
 
