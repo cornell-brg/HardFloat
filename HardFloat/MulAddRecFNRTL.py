@@ -9,7 +9,7 @@ class MulAddRecFN( VerilogPlaceholder, Component ):
 
   # Constructor
 
-  def construct( s, expWidth=5, sigWidth=11, imulEn=0 ):
+  def construct( s, expWidth=5, sigWidth=11, imulEn=0, mulWidth=16 ):
 
     # Interface
 
